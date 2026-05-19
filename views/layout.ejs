@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Stok Opname | FTI Inventory</title>
+    <link rel="stylesheet" href="https://unpkg.com/basecoat/css/basecoat.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Menggunakan Lucide Icons untuk tampilan profesional -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="inventory-app">
+
+        <!-- Sidebar Navigation -->
+        <nav class="side-navbar">
+            <div class="brand-logo">
+                <i data-lucide="boxes" class="brand-icon"></i>
+                <h2>StokFTI</h2>
+            </div>
+
+            <div class="nav-links">
+                <a href="/dashboard" class="nav-item">
+                    <i data-lucide="layout-dashboard"></i> Dashboard
+                </a>
+
+                <% if (typeof role !== 'undefined' && role === 'Admin Logistik') { %>
+                    <a href="/data-barang" class="nav-item">
+                        <i data-lucide="database"></i> Master Barang
+                    </a>
+                    <a href="/proses-stok" class="nav-item">
+                        <i data-lucide="clipboard-check"></i> Proses Stok Opname
+                    </a>
+                <% } %>
+                
+                <a href="/laporan" class="nav-item">
+                    <i data-lucide="file-bar-chart"></i> Laporan Inventaris
+                </a>
+            </div>
+        </nav>
+
+        <div class="main-content">
+            <!-- Header -->
+            <header class="app-header">
+                <div class="header-title">
+                    Sistem Informasi Stok Opname
+                </div>
+                <div class="user-profile">
+                    <span class="greeting">
+                        <%= typeof nama !== 'undefined' ? nama : 'Pengguna' %> 
+                        <span class="role-badge"><%= typeof role !== 'undefined' ? role : 'Guest' %></span>
+                    </span>
+                    <a href="/logout" class="btn-logout-custom">
+                        <i data-lucide="log-out" class="icon-small"></i> Keluar
+                    </a>
+                </div>
+            </header>
+
+            <!-- Dynamic Content -->
+            <main class="page-body">
+                <%- body %>
+            </main>
+        </div>
+
+    </div>
+
+    <!-- Inisialisasi Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+</body>
+</html>

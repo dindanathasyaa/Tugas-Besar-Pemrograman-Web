@@ -1,0 +1,72 @@
+<div class="dashboard-wrapper">
+    <div class="dashboard-header">
+        <h1>Dashboard Utama</h1>
+        <p>Ringkasan status operasional stok opname periode berjalan.</p>
+    </div>
+
+    <div class="stat-cards">
+        <div class="stat-card">
+            <div class="stat-icon-wrapper text-blue">
+                <i data-lucide="package"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Total Inventaris</h3>
+                <h2>1,245</h2>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon-wrapper text-amber">
+                <i data-lucide="alert-triangle"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Selisih Tercatat</h3>
+                <h2>12</h2>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon-wrapper text-green">
+                <i data-lucide="check-circle"></i>
+            </div>
+            <div class="stat-info">
+                <h3>Tingkat Penyelesaian</h3>
+                <h2>95%</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-content">
+        <div class="recent-activity card-custom">
+            <h3>Aktivitas Sistem Terakhir</h3>
+            <ul class="activity-list">
+                <li>
+                    <i data-lucide="history" class="icon-tiny"></i>
+                    <span><strong>Andi Saputra</strong> memperbarui catatan stok "Laptop ASUS" (1 jam yang lalu)</span>
+                </li>
+                <li>
+                    <i data-lucide="history" class="icon-tiny"></i>
+                    <span><strong>Andi Saputra</strong> menyelesaikan validasi opname Ruang Server (3 jam yang lalu)</span>
+                </li>
+                <li>
+                    <i data-lucide="history" class="icon-tiny"></i>
+                    <span><strong>Dr. Budi Santoso</strong> mengunduh Dokumen Laporan Stok (Kemarin)</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="quick-actions card-custom">
+            <h3>Tindakan Cepat</h3>
+            <% if (role === 'Admin Logistik') { %>
+                <a href="/proses-stok" class="btn-action">
+                    <i data-lucide="scan-line" class="icon-small"></i> Mulai Pemeriksaan Fisik
+                </a>
+                <a href="/data-barang" class="btn-action outline">
+                    <i data-lucide="plus-circle" class="icon-small"></i> Registrasi Barang Baru
+                </a>
+            <% } else { %>
+                <a href="/laporan" class="btn-action">
+                    <i data-lucide="download" class="icon-small"></i> Unduh Laporan Audit
+                </a>
+            <% } %>
+        </div>
+    </div>
+</div>

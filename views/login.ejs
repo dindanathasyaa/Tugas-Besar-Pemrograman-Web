@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistem Stok Opname FTI</title>
+    <link rel="stylesheet" href="https://unpkg.com/basecoat/css/basecoat.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-left-panel">
+            <i data-lucide="boxes" class="login-illustration"></i>
+            <h1>Sistem Stok Opname</h1>
+            <p>Fakultas Teknologi Informasi</p>
+        </div>
+        <div class="login-right-panel">
+            <div class="login-form-wrapper">
+                <h2>Otentikasi Pengguna</h2>
+                <p class="subtitle">Harap masukkan kredensial Anda untuk mengakses sistem.</p>
+                
+                <% if (typeof error !== 'undefined' && error) { %>
+                    <div class="alert alert-danger">
+                        <%= error %>
+                    </div>
+                <% } %>
+
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="email">Alamat Email Institusi</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="user@fti.ac.id" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Kata Sandi</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="••••••••" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary-custom">
+                        <i data-lucide="log-in" class="icon-small"></i> Masuk ke Sistem
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
